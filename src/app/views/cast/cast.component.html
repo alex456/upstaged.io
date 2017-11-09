@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Role</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let castMember of castList">
+    <td>{{ castMember.name }}</td>
+    <td>{{ castMember.role }}</td>
+    <td><a [href]="'mailto:' + castMember.email + '?Subject=Test%20Email'">{{ castMember.email }}</a></td>
+    <td>{{ castMember.phoneNumber }}</td>
+    <td>
+      <a href="javascript:void(0)">Edit</a>
+    </td>
+    <td>
+      <a href="javascript:void(0)">Delete</a>
+    </td>
+  </tr>
+</table>
