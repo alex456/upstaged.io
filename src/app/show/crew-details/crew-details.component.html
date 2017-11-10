@@ -1,0 +1,65 @@
+<h1>Crew for {{show.name}}</h1>
+<br>
+<div class="container">
+    <h2>Add a member:</h2>
+    <form>
+      <div class="form-row align-items-center">
+        <div class="col-6">
+        <label class="sr-only" for="inlineFormInput">Name</label>
+        <input type="text" class="form-control mb-2 mb-sm-0" id="inlineFormInput" placeholder="Name">
+        </div>
+        <div class="col-6">
+          <label class="sr-only" for="inlineFormInputGroup">Email</label>
+          <div class="input-group mb-2 mb-sm-0">
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="form-row align-items-center">
+        <div class="col-1">
+            <select class="custom-select " id="inlineFormCustomSelect">
+                <option selected>Role</option>
+                <option value="1">Cast</option>
+                <option value="2">Crew</option>
+              </select>
+            </div>
+        <div class="col-7">
+          <label class="sr-only" for="inlineFormInput">Phone Number</label>
+          <input type="text" class="form-control mb-2 mb-sm-0" id="inlineFormInput" placeholder="Phone Number">
+        </div>
+        <div class="col-4">
+          <button type="submit" class="btn btn-dark btn-block">Add</button>
+        </div>
+      </div>
+    </form>
+
+<br>
+
+<table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let castMember of show.crew">
+      <td>{{ castMember.name }}</td>
+      <td>{{ castMember.role }}</td>
+      <td><a [href]="'mailto:' + castMember.email + '?Subject=Test%20Email'">{{ castMember.email }}</a></td>
+      <td>{{ castMember.phoneNumber }}</td>
+      <td>
+        <button class="btn btn-link">
+            <img src="../../../images/pencil.png" width="30" />
+       </button>
+      </td>
+      <td>
+        <button class="btn btn-link">
+            <img src="../../../images/trash-can.png" width="30" />
+       </button>
+      </td>
+    </tr>
+  </table>
+</div>
