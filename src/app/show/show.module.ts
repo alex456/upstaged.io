@@ -10,11 +10,14 @@ import { NavBarComponent } from './navBar/navBar.component';
 import { CrewDetailsComponent } from './crew-details/crew-details.component';
 import { CreateAccountComponent} from './create-account/create-account.component';
 import { CuesDetailsComponent } from './cues-details/cues-details.component';
+import { DocsComponent } from './docs/docs.component';
 
 
 @NgModule({
     imports:      [ BrowserModule, FormsModule, DomainModule, AppRoutingModule ],
-    declarations: [ ShowDetailsComponent, NavBarComponent, CrewDetailsComponent, CreateAccountComponent, CuesDetailsComponent, HomePageComponent ],
+    declarations: [ ShowDetailsComponent, NavBarComponent, CrewDetailsComponent, CreateAccountComponent, CuesDetailsComponent, HomePageComponent,
+    DocsComponent
+],
     exports: [ ShowDetailsComponent, NavBarComponent, CrewDetailsComponent, CreateAccountComponent, CuesDetailsComponent, HomePageComponent ]
   })
   export class ShowModule { }

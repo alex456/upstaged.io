@@ -1,78 +1,76 @@
-<h1>Cues and Lights for {{show.name}}</h1>
 <div class="container">
+  <h1>Cues and Lights for {{show.name}}</h1>
   <h2>Add a cue:</h2>
   <div class="row">
-  <div class="col-8">
-    <form>
-      <div class="form-row align-items-center">
-        <div class="col-4">
-          <label class="sr-only" for="inlineFormInput">CueName</label>
-          <input type="text" class="form-control mb-2 mb-sm-0" id="inlineFormInput" placeholder="Cue Name">
-        </div>
-        <div class="col-2">
+    <div class="col-8">
+      <form>
+        <div class="form-row align-items-center">
+          <div class="col-4">
+            <label class="sr-only" for="inlineFormInput">CueName</label>
+            <input type="text" class="form-control mb-2 mb-sm-0" id="inlineFormInput" placeholder="Cue Name">
+          </div>
+          <div class="col-2">
             <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-                <option selected>Cue Type</option>
-                <option value="1">Light</option>
-                <option value="2">Sound</option>
-              </select>
+              <option selected>Cue Type</option>
+              <option value="1">Light</option>
+              <option value="2">Sound</option>
+            </select>
+          </div>
+          <div class="col-4">
+            <label class="sr-only" for="inlineFormInputGroup">CueActionCall</label>
+            <div class="input-group mb-2 mb-sm-0">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Cue Action Call">
             </div>
-        <div class="col-4">
-          <label class="sr-only" for="inlineFormInputGroup">CueActionCall</label>
-          <div class="input-group mb-2 mb-sm-0">
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Cue Action Call">
+          </div>
+          <div class="col-2">
+            <button type="submit" class="btn btn-dark btn-block">Add</button>
           </div>
         </div>
-        <div class="col-2">
-          <button type="submit" class="btn btn-dark btn-block">Add</button>
+      </form>
+    </div>
+    <div class="col-4">
+      <div style="float:right;">
+        <h5>Display cues:</h5>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked> Light Cues
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked> Sound Cues
+          </label>
         </div>
       </div>
-    </form>
-  </div>
-  <div class="col-4">
-    <div style="float:right;">
-    <h5>Display cues:</h5>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-        Light Cues
-      </label>
     </div>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-        Sound Cues
-      </label>
-    </div>
-    </div>
-  </div>
   </div>
   <br>
-    <table class="table table-striped">
-        <tr>
-          <th>Cue Name</th>
-          <th>Cue Type</th>
-          <th>Cue Action Call</th>
-          <th>Called?</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-        <tr *ngFor="let cue of show.cue">
-          <td>{{ cue.name }}</td>
-          <td>{{ cue.type }}</td>
-          <td>{{ cue.actionCall }}</td>
-          <td>
-            <input type="checkbox" [(ngModel)]="cue.called">
-          </td>
-          <td>
-            <button class="btn btn-link">
-                <img src="../../../images/pencil.png" width="30" />
-           </button>
-          </td>
-        <td>
-            <button class="btn btn-link">
-                <img src="../../../images/trash-can.png" width="30" />
-           </button>
-        </td>
-        </tr>
-      </table>
+  <table class="table table-striped">
+    <tr>
+      <th>Cue Name</th>
+      <th>Cue Type</th>
+      <th>Cue Action Call</th>
+      <th>Called?</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let cue of show.cue">
+      <td>{{ cue.name }}</td>
+      <td>{{ cue.type }}</td>
+      <td>{{ cue.actionCall }}</td>
+      <td>
+        <input type="checkbox" [(ngModel)]="cue.called">
+      </td>
+      <td>
+        <button class="btn btn-link">
+          <img src="../../../images/pencil.png" width="30" />
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-link">
+          <img src="../../../images/trash-can.png" width="30" />
+        </button>
+      </td>
+    </tr>
+  </table>
 </div>

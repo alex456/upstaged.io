@@ -11,7 +11,6 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 
 export class CrewDetailsComponent implements OnInit {
-    
     @Input() show: Show;
     private id: number;
     constructor(

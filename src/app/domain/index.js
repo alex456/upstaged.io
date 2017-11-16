@@ -9,4 +9,6 @@ __export(require("./models/crew"));
 __export(require("./models/cue"));
 __export(require("./models/show"));
 __export(require("./models/shows"));
+__export(require("./models/union-documentation"));
+__export(require("./models/document"));
 //# sourceMappingURL=index.js.map

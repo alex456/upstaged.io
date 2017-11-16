@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Upload a document</h2>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6">
+        <input class="form-control" type="text" placeholder="File upload would go here">
+      </div>
+      <div class="col-md-4">
+        <select class="form-control">
+          <option></option>
+          <option *ngFor="let union of unions" [value]="union.id">{{ union.unionName }}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-primary float-right">Add document</button>
+      </div>
+    </div>
+  </div>
+  <nav class="nav nav-tabs" id="myTab" role="tablist">
+    <a class="nav-item nav-link" data-toggle="tab" [href]="'#union_' + union.id" role="tab" 
+       *ngFor="let union of unions">{{ union.unionName }}</a>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade"
+         *ngFor="let union of unions"
+         [id]="'union_' + union.id">
+      <div class="alert alert-info" *ngIf="!union.docs.length">No documentation for this union.</div>
+      <table class="table table-striped" *ngIf="union.docs.length">
+        <tr>
+          <th>Document Name</th>
+          <th>Link</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        <tr *ngFor="let doc of union.docs">
+          <td>{{ doc.name }}</td>
+          <td><a [href]="doc.link">View Document</a></td>
+          <td><img src="../../../images/pencil.png" width="30" /></td>
+          <td><img src="../../../images/trash-can.png" width="30" /></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

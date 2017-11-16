@@ -5,6 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var docs_component_1 = require("../show/docs/docs.component");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var crew_details_component_1 = require("../show/crew-details/crew-details.component");
@@ -16,7 +17,8 @@ var routes = [
     { path: 'dashboard', component: home_page_component_1.HomePageComponent },
     { path: 'crew/:id', component: crew_details_component_1.CrewDetailsComponent },
     { path: 'new-account', component: create_account_component_1.CreateAccountComponent },
-    { path: 'cues/:id', component: cues_details_component_1.CuesDetailsComponent }
+    { path: 'cues/:id', component: cues_details_component_1.CuesDetailsComponent },
+    { path: 'docs', component: docs_component_1.DocsComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

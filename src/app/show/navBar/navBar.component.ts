@@ -4,12 +4,12 @@ import { Show } from '../../domain/index';
 @Component({
     selector: 'my-navBar',
     templateUrl: './navBar.component.html',
-    styleUrls: [ './navBar.component.css' ] 
+    styleUrls: [ './navBar.component.css' ]
 })
 
 export class NavBarComponent {
 
-    @Input() public shows : Show[] = [];
+    @Input() public shows: Show[] = [];
 
     constructor() { }
 
@@ -21,9 +21,9 @@ export class NavBarComponent {
         this.shows.push(this.newShow);
         this.newShow = new Show();
     }
-        
+
     private getid(listID: number) {
         this.id = listID;
-        console.log(this.id)
+        console.log(this.id);
     }
 }
