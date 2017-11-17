@@ -6,17 +6,18 @@
             <h3>Add a Script</h3>
             <br>
             <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
+            <button class="btn btn-info">Add</button>
         </div>
         <div class="col-6">
             <h3>View a Script</h3> 
             <br>   
-            <select aria-placeholder="Choose Script">
-                    <option value="">Choose a Script</option>
-                    <option value="" *ngFor="let script of scripts; let i = index;">{{script.name}}</option>
+            <select [(ngModel)]="active" (ngModelChange)="update($event)">
+                    <option [ngValue]="undefined" disabled>Choose a Script</option>
+                    <option *ngFor="let script of scripts; let i = index;" [ngValue]="script"> {{script.name}}</option>
             </select>
         </div>
     </div>
     <br><br>    
 
-    <object width="800" height="1200" data="assets/Romeo&Juliet.pdf"></object>
+    <object width="800" height="1200" [data]="cleanURL('assets/' + active.url)"></object>
 </div>
