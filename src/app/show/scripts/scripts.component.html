@@ -5,8 +5,8 @@
         <div class="col-6">
             <h3>Add a Script</h3>
             <br>
-            <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
-            <button class="btn btn-info">Add</button>
+            <input type="file" id="getFile" placeholder="Upload file" name="urlF" accept=".pdf,.doc,.docx" (change)="add($event)">
+            <button class="btn btn-info" (click)="add()" [disabled]="!newScript.url">Add</button>
         </div>
         <div class="col-6">
             <h3>View a Script</h3> 

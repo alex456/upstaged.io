@@ -50,6 +50,23 @@ export class ScriptsComponent implements OnInit {
       console.log("Changed to " , script.name);
       this.active = this.scripts[script.id - 1];
   }
+
+  add(fileInput: Event) {
+    var file = (<HTMLInputElement>fileInput.target).value;
+
+    file = file.replace(/^.*?([^\\\/]*)$/, '$1');
+    console.log(file);
+    this.newScript.url = file;
+    this.newScript.id = this.scripts.length + 1;
+    this.newScript.name = this.newScript.url.slice(0, -4);
+    this.scripts.push(this.newScript);
+    this.newScript = new Script();
+  }
+
+  getFile(filePath) {
+    return filePath.substr(filePath.lastIndexOf('\\') + 1).split('.')[0];
+  }
+
   getScripts() {
     
   }
