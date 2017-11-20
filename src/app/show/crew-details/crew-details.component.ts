@@ -75,5 +75,19 @@ export class CrewDetailsComponent implements OnInit {
 
     private onAccountSaved(show: Show) {
         console.log("saved");
-      }
+    }
+
+    edit(cr: Crew) {
+        this.newCrew = cr;
+    }
+
+    closed() {
+        this.newCrew = new Crew();
+    }
+
+    saved() {
+        this.showService.update(this.id, this.show)
+            .subscribe(x => this.onAccountSaved(x));
+        this.newCrew = new Crew();
+    }
 }

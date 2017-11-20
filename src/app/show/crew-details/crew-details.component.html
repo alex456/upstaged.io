@@ -54,7 +54,7 @@
       <td><a [href]="'mailto:' + castMember.email + '?Subject=Test%20Email'">{{ castMember.email }}</a></td>
       <td>{{ castMember.phoneNumber }}</td>
       <td>
-        <button class="btn btn-link">
+        <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal" (click)="edit(castMember)">
             <img src="assets/images/pencil.png" width="30" />
        </button>
       </td>
@@ -65,4 +65,48 @@
       </td>
     </tr>
   </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit:  {{this.newCrew.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" id="recipient-name" name="name" [(ngModel)]="newCrew.name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" id="recipient-action" name="email" [(ngModel)]="newCrew.email">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Phone Number:</label>
+            <input type="text" class="form-control" id="recipient-action" name="numb" [(ngModel)]="newCrew.phoneNumber">
+          </div>
+        </form>
+        <div class="form-group">
+          <label for="message-text" class="col-form-label">Role:</label>
+          <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="role" [(ngModel)]="newCrew.role">
+            <option selected>Crew Role</option>
+            <option value="Cast">Cast</option>
+            <option value="Crew">Crew</option>
+            <option value="Actor">Actor</option>
+            <option value="Writer">Writer</option>
+            <option value="Extra">Extra</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closed()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saved()" [disabled]="!newCrew.name"  data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -61,5 +61,19 @@ export class CuesDetailsComponent {
 
     private onAccountSaved(show: Show) {
         console.log("saved");
-      }
+    }
+
+    edit(cu: Cue) {
+        this.newCue = cu;
+    }
+
+    closed() {
+        this.newCue = new Cue();
+    }
+
+    saved() {
+        this.showService.update(this.id, this.show)
+            .subscribe(x => this.onAccountSaved(x));
+        this.newCue = new Cue();
+    }
 }
