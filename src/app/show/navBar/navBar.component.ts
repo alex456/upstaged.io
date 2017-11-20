@@ -31,6 +31,8 @@ export class NavBarComponent implements OnInit {
     private addShow(): void {
         this.newShow.id = this.shows.length + 1;
         console.log(this.newShow.name);
+        this.newShow.crew = [];
+        this.newShow.cue = [];
         this.showService.addShow(this.newShow)
             .subscribe(x => {this.shows.push(this.newShow);});
         this.shows.push(this.newShow);

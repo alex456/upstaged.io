@@ -48,10 +48,17 @@ export class CrewDetailsComponent implements OnInit {
     }
 
     addCrew(): void {
-        console.log("new crew add");
-        this.show.crew.push(this.newCrew);
-        this.showService.update(this.id, this.show)
-            .subscribe(x => this.onShowSaved(x));
+        // if (this.show.crew.length) {
+            console.log("new crew add");
+            this.show.crew.push(this.newCrew);
+            this.showService.update(this.id, this.show)
+                .subscribe(x => this.onShowSaved(x));
+        // } else {
+        //     this.show.crew = [];
+        //     this.show.crew.push(this.newCrew);
+        //     this.showService.update(this.id, this.show)
+        //         .subscribe(x => this.onShowSaved(x));
+        // }
     }
 
     private onShowSaved(show: Show) {
