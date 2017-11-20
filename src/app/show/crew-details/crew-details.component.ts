@@ -62,6 +62,11 @@ export class CrewDetailsComponent implements OnInit {
         this.show.crew = this.show.crew.filter(x => x !== crewMem);
         const index = this.show.crew.indexOf(crewMem);
         this.show.crew.splice(index, 0);
-        this.showService.update(this.id, this.show);
+        this.showService.update(this.id, this.show)
+        .subscribe(x => this.onAccountSaved(x));
     }
+
+    private onAccountSaved(show: Show) {
+        console.log("saved");
+      }
 }

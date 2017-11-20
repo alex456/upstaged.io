@@ -51,14 +51,15 @@ export class CuesDetailsComponent {
        this.newCue = new Cue(); 
     }
 
+    delete(cu: Cue) {
+        this.show.cue = this.show.cue.filter(x => x !== cu);
+        const index = this.show.cue.indexOf(cu);
+        this.show.cue.splice(index, 0);
+        this.showService.update(this.id, this.show)
+            .subscribe(x => this.onAccountSaved(x));
+    }
 
-    // getShow(): void {
-    //     this.id = +this.route.snapshot.paramMap.get('id');
-    //     if (this.id.toString() == 'undefined' || !this.id) {
-    //         this.id = 1;
-    //     }
-    //     console.log(this.id);
-    //     this.showService.getShow(this.id)
-    //       .subscribe(show => this.show = show);
-    // }
+    private onAccountSaved(show: Show) {
+        console.log("saved");
+      }
 }

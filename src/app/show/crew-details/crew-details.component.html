@@ -1,6 +1,6 @@
 <div class="container">
     <br>
-  <h1>Crew for {{show.name}}</h1>
+  <h1>Crew for {{show?.name}}</h1>
     <h2>Add a member:</h2>
     <form>
       <div class="form-row align-items-center">
@@ -32,7 +32,7 @@
           <input type="text" class="form-control mb-2 mb-sm-0" id="inlineFormInput" placeholder="Phone Number" [(ngModel)]="newCrew.phoneNumber" name="phone"/>
         </div>
         <div class="col-4">
-          <button type="submit" class="btn btn-dark btn-block" (click)="addCrew()">Add</button>
+          <button type="submit" class="btn btn-dark btn-block" (click)="addCrew()" [disabled]="!newCrew.name">Add</button>
         </div>
       </div>
     </form>
@@ -48,7 +48,7 @@
       <th>Edit</th>
       <th>Delete</th>
     </tr>
-    <tr *ngFor="let castMember of show.crew">
+    <tr *ngFor="let castMember of show?.crew">
       <td>{{ castMember.name }}</td>
       <td>{{ castMember.role }}</td>
       <td><a [href]="'mailto:' + castMember.email + '?Subject=Test%20Email'">{{ castMember.email }}</a></td>
