@@ -41,7 +41,13 @@ export class ShowService {
     return this.httpClient
         .put(`${this.url}/updateShow/${id}`, show)
         .catch(x => this.handleException(x));
-}
+  }
+
+  public delete(id: number): Observable<void> {
+    return this.httpClient
+        .delete<void>(`${this.url}/deleteShow/${id}`)
+        .catch(x => this.handleException(x));
+  }
 
   deleteCrew(show: Show, crew: Crew): Observable<Show> {
     return this.httpClient

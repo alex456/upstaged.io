@@ -40,7 +40,6 @@ export class MemoryService implements InMemoryDbService {
                   }
               ]
           },
-          
           {
               name: 'Hamlet',
               description: 'A Shakespeare Product',
