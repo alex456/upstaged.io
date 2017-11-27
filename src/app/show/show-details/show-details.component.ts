@@ -12,17 +12,17 @@ export class ShowDetailsComponent implements OnInit {
 
     constructor(
         private showService: ShowService
-    ){}
+    ) {}
 
     getShows(): void {
-        //this.shows = this.showService.getShows();
+        // this.shows = this.showService.getShows();
         this.showService.getShows()
             .subscribe(shows => this.shows = shows);
     }
 
     ngOnInit() {
-        this.getShows()
-    }    
+        this.getShows();
+    }
 
 
 }

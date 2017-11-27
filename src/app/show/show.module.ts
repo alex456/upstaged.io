@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DomainModule } from '../domain/domain.module';
 import { FormsModule } from '@angular/forms';
-import{ AppRoutingModule} from '../app-routing/app-routing.module';
+import { AppRoutingModule} from '../app-routing/app-routing.module';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
