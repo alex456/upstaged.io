@@ -33,19 +33,19 @@ export class ShowService {
 
   addShow(show: Show): Observable<Show> {
     console.log('Adding to API');
-    return this.httpClient.post<Show>(`${this.url}/newShow`, show)
+    return this.httpClient.post<Show>(`${this.url}/shows`, show)
       .catch(x => this.handleException(x));
   }
 
   public update(id: number, show: Show): Observable<Show> {
     return this.httpClient
-        .put(`${this.url}/updateShow/${id}`, show)
+        .put(`${this.url}/shows/${id}`, show)
         .catch(x => this.handleException(x));
   }
 
   public delete(id: number): Observable<void> {
     return this.httpClient
-        .delete<void>(`${this.url}/deleteShow/${id}`)
+        .delete<void>(`${this.url}/shows/${id}`)
         .catch(x => this.handleException(x));
   }
 
