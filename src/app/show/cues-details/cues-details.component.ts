@@ -10,6 +10,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 export class CuesDetailsComponent {
     @Input() show: Show;
+    showLights: boolean;  
+    showSounds: boolean;  
     private id: number;
     private newCue = new Cue();
     constructor(
