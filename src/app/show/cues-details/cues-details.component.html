@@ -49,7 +49,7 @@
       <th>Delete</th>
     </tr>
     <ng-container *ngFor="let cue of show?.cue" >
-    <tr *ngIf="cue.type == 'Lights' && showLights">
+    <tr *ngIf="cue.type == 'Light' && showLights">
       <td>{{ cue.name }}</td>
       <td>{{ cue.type }}</td>
       <td>{{ cue.actionCall }}</td>

@@ -28,7 +28,7 @@ export class MemoryService implements InMemoryDbService {
               cue: [
                   {
                       name: "Lights on",
-                      type: "Lights",
+                      type: "Light",
                       actionCall: "When Jeff walks on stage",
                       called: true
                   },
