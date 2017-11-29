@@ -24,14 +24,14 @@ export class DocsComponent implements OnInit {
       id: 2,
       docs: [
         {
-          name: 'Contract',
+          name: 'Actor Contract',
           id: 1,
-          link: '#'
+          link: 'http://media.breakdownexpress.com/attachment/2011/9/1046333230108.pdf'
         },
         {
-          name: 'Pay',
+          name: 'Actor Payment Guidelines',
           id: 2,
-          link: '#'
+          link: 'https://www.dol.gov/whd/regs/compliance/whdfs71.pdf'
         },
     ]
     });

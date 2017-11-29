@@ -3,10 +3,13 @@
     <h2>Upload a document</h2>
     <div class="form-group">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
           <input class="form-control" type="text" placeholder="File upload would go here">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
+          <input class="form-control" type="text" placeholder="Doc Name">
+        </div>
+        <div class="col-md-3">
           <select class="form-control">
             <option></option>
             <option *ngFor="let union of unions" [value]="union.id">{{ union.unionName }}</option>
@@ -35,7 +38,8 @@
           </tr>
           <tr *ngFor="let doc of union.docs">
             <td>{{ doc.name }}</td>
-            <td><a [href]="doc.link">View Document</a></td>
+            <td><a [href]="doc.link" target="popup" 
+              onclick="window.open('doc.link','popup','width=600,height=600');">View Document</a></td>
             <td><img src="assets/images/pencil.png" width="30" /></td>
             <td><img src="assets/images/trash-can.png" width="30" /></td>
           </tr>
