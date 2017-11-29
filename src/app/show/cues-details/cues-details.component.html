@@ -27,6 +27,12 @@
         Sound Cues
       </label>
     </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" [(ngModel)]="showAll" type="checkbox" ng-init="checked=true">
+        All Cues
+      </label>
+    </div>
     </div>
   </div>
   </div>
@@ -80,6 +86,27 @@
          </button>
       </td>
       </tr>
+
+      <tr *ngIf="showAll">
+        <td>{{ cue.name }}</td>
+        <td>{{ cue.type }}</td>
+        <td>{{ cue.actionCall }}</td>
+        <td>
+          <input type="checkbox" [(ngModel)]="cue.called">
+        </td>
+        <td>
+          <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal" (click)="edit(cue)">
+              <img src="assets/images/pencil.png" width="30" />
+         </button>
+        </td>
+      <td>
+          <button class="btn btn-link" (click)="delete(cue)">
+              <img src="assets/images/trash-can.png" width="30" />
+         </button>
+      </td>
+      </tr>
+
+
   </ng-container>
   </table>
 </div>
@@ -167,7 +194,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-success btn-block" (click)="addCue()" [disabled]="!newCue.name">Add</button>
+                <button type="submit" class="btn btn-success btn-block" (click)="addCue()" [disabled]="!newCue.name" data-dismiss="modal">Add</button>
               </div>
         </div>
     </div>

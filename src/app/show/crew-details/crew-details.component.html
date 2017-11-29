@@ -74,7 +74,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closed()">Close</button>
-        <button type="button" class="btn btn-primary" (click)="saved()" [disabled]="!newCrew.name"  data-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="saved()" [disabled]="!newCrew.name">Save</button>
       </div>
     </div>
   </div>
@@ -128,7 +128,7 @@
               </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-success btn-block" (click)="addCrew()" [disabled]="!newCrew.name">Add</button>
+                <button type="submit" class="btn btn-success btn-block" (click)="addCrew()" [disabled]="!newCrew.name" data-dismiss="modal">Add</button>
               </div>
         </div>
     </div>
