@@ -4,8 +4,6 @@
   <br>
   <!-- ADD MEMBER MODAL -->
 
-
-
   <div class="row">
   <div class="col-6">
       <div style="float:left;">
@@ -48,13 +46,11 @@
       <th>Edit</th>
       <th>Delete</th>
     </tr>
-
     <ng-container *ngFor="let cu of cue" >
-    <tr *ngIf="cu.type == 'Light' && showLights">
+    <tr *ngIf="cu.type == 'Lights' && showLights">
       <td>{{ cu.name }}</td>
       <td>{{ cu.type }}</td>
       <td>{{ cu.actionCall }}</td>
-
       <td>
         <input type="checkbox" [(ngModel)]="cu.called">
       </td>
@@ -140,7 +136,7 @@
           <label for="message-text" class="col-form-label">Role:</label>
           <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="type" [(ngModel)]="newCue.type">
             <option selected>Cue Type</option>
-            <option value="Light">Light</option>
+            <option value="Lights">Lights</option>
             <option value="Sound">Sound</option>
             <option value="Background Change">Background Change</option>
             <option value="Music">Music</option>
