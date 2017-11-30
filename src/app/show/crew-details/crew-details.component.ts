@@ -45,7 +45,7 @@ export class CrewDetailsComponent implements OnInit {
         this.newUrl = 'http://18.221.82.70/shows/' + this.id;
 
         this.http.get<Show>(this.newUrl).subscribe(data => {
-            console.log(data.showName);
+            // console.log(data.showName);
             this.show.name = data.showName;
 
 
