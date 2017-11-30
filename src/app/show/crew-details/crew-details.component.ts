@@ -55,8 +55,9 @@ export class CrewDetailsComponent implements OnInit {
                 // this.results = JSON.stringify(data['results']);
                 // console.log(JSON.stringify(data));
                 for(let i in data) {
+                    console.log(i, "loop");
                     
-                    if (data[i].show_id == this.id) {
+                    if (+data[i].show_id === +this.id) {
                         console.log(data[i]);
                         this.newCrew.email = data[i].email;
                         this.newCrew.name = data[i].crewName;
