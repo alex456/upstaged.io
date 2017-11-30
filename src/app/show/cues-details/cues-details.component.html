@@ -48,11 +48,13 @@
       <th>Edit</th>
       <th>Delete</th>
     </tr>
+
     <ng-container *ngFor="let cu of cue" >
-    <tr *ngIf="cu.type == 'Lights' && showLights">
+    <tr *ngIf="cu.type == 'Light' && showLights">
       <td>{{ cu.name }}</td>
       <td>{{ cu.type }}</td>
       <td>{{ cu.actionCall }}</td>
+
       <td>
         <input type="checkbox" [(ngModel)]="cu.called">
       </td>
