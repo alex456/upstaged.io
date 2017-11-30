@@ -48,59 +48,59 @@
       <th>Edit</th>
       <th>Delete</th>
     </tr>
-    <ng-container *ngFor="let cue of show?.cue" >
-    <tr *ngIf="cue.type == 'Lights' && showLights">
-      <td>{{ cue.name }}</td>
-      <td>{{ cue.type }}</td>
-      <td>{{ cue.actionCall }}</td>
+    <ng-container *ngFor="let cu of cue" >
+    <tr *ngIf="cu.type == 'Lights' && showLights">
+      <td>{{ cu.name }}</td>
+      <td>{{ cu.type }}</td>
+      <td>{{ cu.actionCall }}</td>
       <td>
-        <input type="checkbox" [(ngModel)]="cue.called">
+        <input type="checkbox" [(ngModel)]="cu.called">
       </td>
       <td>
-        <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal" (click)="edit(cue)">
+        <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal" (click)="edit(cu)">
             <img src="assets/images/pencil.png" width="30" />
        </button>
       </td>
     <td>
-        <button class="btn btn-link" (click)="delete(cue)">
+        <button class="btn btn-link" (click)="delete(cu)">
             <img src="assets/images/trash-can.png" width="30" />
        </button>
     </td>
     </tr>
 
-    <tr *ngIf="cue.type == 'Sound' && showSounds">
-        <td>{{ cue.name }}</td>
-        <td>{{ cue.type }}</td>
-        <td>{{ cue.actionCall }}</td>
+    <tr *ngIf="cu.type == 'Sound' && showSounds">
+        <td>{{ cu.name }}</td>
+        <td>{{ cu.type }}</td>
+        <td>{{ cu.actionCall }}</td>
         <td>
-          <input type="checkbox" [(ngModel)]="cue.called">
+          <input type="checkbox" [(ngModel)]="cu.called">
         </td>
         <td>
-          <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal" (click)="edit(cue)">
+          <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal" (click)="edit(cu)">
               <img src="assets/images/pencil.png" width="30" />
          </button>
         </td>
       <td>
-          <button class="btn btn-link" (click)="delete(cue)">
+          <button class="btn btn-link" (click)="delete(cu)">
               <img src="assets/images/trash-can.png" width="30" />
          </button>
       </td>
       </tr>
 
       <tr *ngIf="showAll">
-        <td>{{ cue.name }}</td>
-        <td>{{ cue.type }}</td>
-        <td>{{ cue.actionCall }}</td>
+        <td>{{ cu.name }}</td>
+        <td>{{ cu.type }}</td>
+        <td>{{ cu.actionCall }}</td>
         <td>
-          <input type="checkbox" [(ngModel)]="cue.called">
+          <input type="checkbox" [(ngModel)]="cu.called">
         </td>
         <td>
-          <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal" (click)="edit(cue)">
+          <button class="btn btn-link" data-toggle="modal" data-target="#exampleModal" (click)="edit(cu)">
               <img src="assets/images/pencil.png" width="30" />
          </button>
         </td>
       <td>
-          <button class="btn btn-link" (click)="delete(cue)">
+          <button class="btn btn-link" (click)="delete(cu)">
               <img src="assets/images/trash-can.png" width="30" />
          </button>
       </td>

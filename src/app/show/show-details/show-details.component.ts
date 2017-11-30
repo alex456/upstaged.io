@@ -16,12 +16,12 @@ export class ShowDetailsComponent implements OnInit {
 
     getShows(): void {
         // this.shows = this.showService.getShows();
-        this.showService.getShows()
-            .subscribe(shows => this.shows = shows);
+        // this.showService.getShows()
+        //     .subscribe(shows => this.shows = shows);
     }
 
     ngOnInit() {
-        this.getShows();
+        //this.getShows();
     }
 
 

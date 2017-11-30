@@ -15,7 +15,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item text-info" data-target="#myModal" data-toggle="modal" href="#myModal">Add a Show</a>
                     <div class="dropdown-divider"></div> 
-                    <a class="dropdown-item" (click)="getid(show.id)" *ngFor="let show of shows; let i = index;">{{show.name}}</a> 
+                    <a class="dropdown-item" (click)="getid(show)" *ngFor="let show of shows; let i = index;">{{show.name}}</a> 
                 </div>
             </li>
             <li class="nav-item">

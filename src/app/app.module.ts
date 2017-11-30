@@ -15,7 +15,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ShowModule, AppRoutingModule, 
-    HttpClientModule, InMemoryWebApiModule.forFeature(MemoryService)],
+    HttpClientModule],
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ ShowService ]

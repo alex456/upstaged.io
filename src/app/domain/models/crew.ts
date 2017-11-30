@@ -3,4 +3,5 @@ export class Crew {
     email?: string;
     role?: string;
     phoneNumber?: string;
+    id?: number;
 }

@@ -3,4 +3,5 @@ export class Cue {
     type?: string;
     actionCall?: string; 
     called?: boolean;
+    id?: number;
 }

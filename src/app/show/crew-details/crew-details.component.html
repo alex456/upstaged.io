@@ -17,7 +17,7 @@
       <th>Edit</th>
       <th>Delete</th>
     </tr>
-    <tr *ngFor="let castMember of show?.crew">
+    <tr *ngFor="let castMember of crew">
       <td>{{ castMember.name }}</td>
       <td>{{ castMember.role }}</td>
       <td><a [href]="'mailto:' + castMember.email + '?Subject=Test%20Email'">{{ castMember.email }}</a></td>
