@@ -13,11 +13,11 @@ import { HttpBackendService } from 'angular-in-memory-web-api';
 })
 
 export class CrewDetailsComponent implements OnInit {
-    
-    private show = new Show();
-    private id: number;
-    private crew: Crew[] = [];
-    private newCrew = new Crew();
+
+    public show = new Show();
+    public id: number;
+    public crew: Crew[] = [];
+    public newCrew = new Crew();
     newUrl: string;
 
     constructor(
@@ -30,13 +30,13 @@ export class CrewDetailsComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.params.subscribe(x => this.onRouteParams(x));
-        this.newCrew.name = "";
+        this.newCrew.name = '';
     }
 
     private onRouteParams(params: any) {
         this.crew = [];
         this.id = +params.id;
-        if (this.id.toString() == 'undefined' || !this.id) {
+        if (this.id.toString() === 'undefined' || !this.id) {
             this.id = 1;
        }
         if (params.id) {
@@ -52,11 +52,11 @@ export class CrewDetailsComponent implements OnInit {
         });
 
             this.http.get<Crew>('http://18.221.82.70/crew').subscribe(data => {
-                //this.results = JSON.stringify(data['results']);
-                //console.log(JSON.stringify(data));
-                for(var i in data) {
+                // this.results = JSON.stringify(data['results']);
+                // console.log(JSON.stringify(data));
+                for(let i in data) {
                     
-                    if (data[i].show_id == this.id) {
+                    if (data[i].show_id === this.id) {
                         console.log(data[i]);
                         this.newCrew.email = data[i].email;
                         this.newCrew.name = data[i].crewName;
@@ -91,20 +91,19 @@ export class CrewDetailsComponent implements OnInit {
         //         .subscribe(x => this.onShowSaved(x));
         // }
 
-        var body = {
+        let body = {
             crewName: this.newCrew.name,
             crewRole: this.newCrew.role,
             show_id: this.id,
             email: this.newCrew.email,
-            phone_num: this.newCrew.phoneNumber  
+            phone_num: this.newCrew.phoneNumber
         };
         this.http.post('http://18.221.82.70/newCrew', body).subscribe(data => {});
-        
         this.newCrew = new Crew();
     }
 
     private onShowSaved(show: Show) {
-       this.newCrew = new Crew(); 
+       this.newCrew = new Crew();
     }
 
     delete(crewMem: Crew) {

@@ -15,9 +15,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class ScriptsComponent implements OnInit {
     scripts: Script[] = [];
-    private newScript = new Script();
-    private id: number;
-    private active: Script;
+    public newScript = new Script();
+    public id: number;
+    public active: Script;
 
 
     constructor(
@@ -39,7 +39,6 @@ export class ScriptsComponent implements OnInit {
     this.newScript.url = "Hamlet.pdf";
     this.scripts.push(this.newScript);
     this.newScript = new Script();
-    //this.getScripts()
   }
 
   cleanURL(url) {
@@ -47,12 +46,12 @@ export class ScriptsComponent implements OnInit {
   }
 
   update(script: Script) {
-      console.log("Changed to " , script.name);
+      console.log('Changed to ' , script.name);
       this.active = this.scripts[script.id - 1];
   }
 
   add(fileInput: Event) {
-    var file = (<HTMLInputElement>fileInput.target).value;
+    let file = (<HTMLInputElement>fileInput.target).value;
 
     file = file.replace(/^.*?([^\\\/]*)$/, '$1');
     console.log(file);
@@ -68,6 +67,6 @@ export class ScriptsComponent implements OnInit {
   }
 
   getScripts() {
-    
+
   }
 }

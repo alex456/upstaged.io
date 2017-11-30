@@ -11,13 +11,16 @@ import { HttpBackendService } from 'angular-in-memory-web-api';
 })
 
 export class CuesDetailsComponent {
-    private show = new Show();
-    showLights: boolean;  
-    showSounds: boolean;  
-    private id: number;
-    private cue: Cue[] = [];
-    private newCue = new Cue();
+    public show = new Show();
+    showLights: boolean;
+    showSounds: boolean;
+    showAll: boolean; // TODO alex change this I think -- jake
+    public id: number;
+    public cue: Cue[] = [];
+    public newCue = new Cue();
     newUrl: string;
+
+    
 
     constructor(
         private route: ActivatedRoute,
