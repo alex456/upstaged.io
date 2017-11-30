@@ -14,7 +14,7 @@ export class CuesDetailsComponent {
     public show = new Show();
     showLights: boolean;
     showSounds: boolean;
-    showAll: boolean; // TODO alex change this I think -- jake
+    showAll: boolean;
     public id: number;
     public cue: Cue[] = [];
     public newCue = new Cue();
