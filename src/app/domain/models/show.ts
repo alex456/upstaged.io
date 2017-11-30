@@ -8,4 +8,5 @@ export class Show {
     date?: number;
     crew?: Crew[];
     cue?: Cue[];
+    showName?: string;
 }
