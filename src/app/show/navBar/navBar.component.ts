@@ -14,6 +14,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 export class NavBarComponent implements OnInit {
 
     public id: number;
+    public showName?: string;
     shows: Show[] = [];
     results: '';
     public newShow = new Show();
@@ -76,6 +77,7 @@ export class NavBarComponent implements OnInit {
 
     private getid(sh: Show) {
         this.id = sh.id;
+        this.showName = sh.name;
         console.log(this.id);
     }
 }
